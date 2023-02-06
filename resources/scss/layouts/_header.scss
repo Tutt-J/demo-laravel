@@ -1,0 +1,16 @@
+.header {
+    padding: 20px 15px;
+    background-color: $beige;
+    z-index: 1;
+    &--transparent {
+        background-color: transparent;
+    }
+    &__logo {
+        &--transparent {
+            max-height: 120px;
+        }
+        &--visible {
+            max-height: 90px;
+        }
+    }
+}

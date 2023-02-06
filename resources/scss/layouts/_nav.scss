@@ -1,0 +1,26 @@
+.nav {
+    &__item {
+        list-style-type: none;
+    }
+    &__link {
+        color: $blueGrey;
+        text-decoration: none;
+        margin: 0 20px;
+        text-transform: uppercase;
+        font-weight:600;
+        &:hover{
+            color:$orange;
+            border-bottom:3px solid $orange;
+        }
+        &--active{
+            color:$orange;
+            border-bottom:3px solid $orange;
+        }
+    }
+}
+
+.header--transparent{
+    .nav__link {
+        color: white;
+    }
+}

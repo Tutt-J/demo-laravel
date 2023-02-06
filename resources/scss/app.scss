@@ -1,9 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~fontawesome/css/all.min.css';
+@import "utils/responsive";
+@import "base/variables";
+@import "base/fonts";
+@import "components/buttons";
+@import "components/cookies";
+@import "layouts/header";
+@import "layouts/nav";
+@import "layouts/footer";
+@import "pages/home";
 
-body{
-    background-color:red;
-    h1{
-        color:green;
-    }
-}

@@ -1,0 +1,23 @@
+.hero{
+    &__background{
+        width:100vw;
+        height:100vh;
+        background-image: url("/public/storage/img/universe.jpg");
+    }
+    &__datas{
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        color:white;
+    }
+    &__title{
+        font-size:4rem;
+        font-weight:600;
+    }
+    &__text{
+        font-size:1.2rem;
+    }
+    &__actions{
+        gap:20px;
+    }
+}
