@@ -22,6 +22,12 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/domains', [DomainsController::class, 'list'])->name('domains.list')->middleware(['auth', 'verified']);
 
+    Route::get('/domains/create', [DomainsController::class, 'create'])->name('domains.create')->middleware(['auth', 'verified']);
+
+    Route::post('/domains/store', [DomainsController::class, 'store'])->name('domains.store')->middleware(['auth', 'verified']);
+
+    Route::delete('/domains/destroy/{id}', [DomainsController::class, 'destroy'])->name('domains.destroy')->middleware(['auth', 'verified']);
+
     
     Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
