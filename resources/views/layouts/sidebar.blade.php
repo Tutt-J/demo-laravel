@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="{{route('domains.list')}}" class="nav-link text-white">
                 Domaines d'expertise
             </a>
         </li>
