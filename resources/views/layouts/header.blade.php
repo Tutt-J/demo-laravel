@@ -14,7 +14,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav__item nav-item"><a class="nav__link nav__link--active" href="{{ route('home') }}">Accueil</a>
+                    <li class="nav__item nav-item"><a class="nav__link nav__link--active"
+                            href="{{ route('home') }}">Accueil</a>
                     </li>
                     <li class="nav__item nav-item"><a class="nav__link" href="#">Portfolio</a></li>
                     <li class="nav__item nav-item"><a class="nav__link" href="#">Contact</a></li>

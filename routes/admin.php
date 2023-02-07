@@ -16,19 +16,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->middleware(['auth', 'verified'])->name('admin.dashboard');
+    Route::get(
+        '/dashboard',
+        function () {
+            return view('admin.dashboard');
+        }
+    )->middleware(['auth', 'verified'])->name('admin.dashboard');
+    Route::middleware('auth')->group(
+        function () {
+            Route::get('/domains', [DomainsController::class, 'list'])->name('domains.list');
+            Route::get('/domains/create', [DomainsController::class, 'create'])->name('domains.create');
+            Route::post('/domains/store', [DomainsController::class, 'store'])->name('domains.store');
+            Route::delete('/domains/destroy/{id}', [DomainsController::class, 'destroy'])->name('domains.destroy');
+            Route::get('/domains/update/{id}', [DomainsController::class, 'edit'])->name('domains.update.edit');
+            Route::patch('/domains/store-update/{id}', [DomainsController::class, 'update'])->name('domains.update.store');
+        }
+    );
 
-    Route::get('/domains', [DomainsController::class, 'list'])->name('domains.list')->middleware(['auth', 'verified']);
-
-    
-    Route::middleware('auth')->group(function () {
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    });
+    Route::middleware('auth')->group(
+        function () {
+            Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+            Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        }
+    );
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
