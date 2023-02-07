@@ -1,26 +1,39 @@
 .nav {
     &__item {
         list-style-type: none;
+        margin:15px 0;
+        @include media-lg{
+            margin:0;
+        }
     }
     &__link {
         color: $blueGrey;
         text-decoration: none;
         margin: 0 20px;
         text-transform: uppercase;
-        font-weight:600;
-        &:hover{
-            color:$orange;
-            border-bottom:3px solid $orange;
+        font-weight: 600;
+        &:hover {
+            color: $orange;
+            border-bottom: 3px solid $orange;
         }
-        &--active{
-            color:$orange;
-            border-bottom:3px solid $orange;
+        &--active {
+            color: $orange;
+            border-bottom: 3px solid $orange;
+        }
+    }
+    &bar-nav{
+        background-color: $darkGrey;
+        @include media-md{
+            background-color:transparent;
         }
     }
 }
 
-.header--transparent{
+.header--transparent {
     .nav__link {
         color: white;
+        &--active, &:hover {
+            color: $orange;
+        }
     }
 }

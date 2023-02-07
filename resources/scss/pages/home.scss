@@ -1,23 +1,35 @@
-.hero{
-    &__background{
-        width:100vw;
-        height:100vh;
-        background-image: url("/public/storage/img/universe.jpg");
+.hero {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("/public/storage/img/universe.jpg");
+
+    &__datas {
+        padding-top:170px;
+        padding-bottom:50px;
+        color: white;
     }
-    &__datas{
-        top:50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        color:white;
+    &__title {
+        font-size: 1.7rem;
+        font-weight: 600;
+        @include media-xs{
+            font-size:2.5rem;
+        }
+        @include media-sm{
+            font-size:3rem;
+        }
+        @include media-md{
+            font-size: 3.5rem;
+        }
+        @include media-lg{
+            font-size: 4rem;
+        }
     }
-    &__title{
-        font-size:4rem;
-        font-weight:600;
+    &__text {
+        @include media-xs{
+            font-size: 1.2rem;
+        }
     }
-    &__text{
-        font-size:1.2rem;
-    }
-    &__actions{
-        gap:20px;
+    &__actions {
+        gap: 20px;
     }
 }
