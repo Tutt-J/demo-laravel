@@ -58,11 +58,11 @@
             </div> --}}
             <div class="mb-3 col-12 col-md-8 col-lg-5">
                 <label for="email" class="form-label">Adresse e-mail : </label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" autofocus required>
             </div>
             <div class="mb-3 col-12 col-md-8 col-lg-5">
                 <label for="password" class="form-label">Mot de passe : </label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="mb-3 form-check col-12 col-md-8 col-lg-5">
                 <input type="checkbox" class="form-check-input" id="remember_me" name="remember">
@@ -71,8 +71,8 @@
               <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
         <div class="text-center py-3">
-            <p><a href="" class="mb-3">Je n'ai pas encore de compte</a></p>
-            <p><a href="" class="mb-3">Mot de passe oublié</a></p>
+            <p><a href="{{route("register")}}" class="mb-3">Je n'ai pas encore de compte</a></p>
+            <p><a href="{{ route('password.request') }}" class="mb-3">Mot de passe oublié</a></p>
         </div>
        
     </div>
