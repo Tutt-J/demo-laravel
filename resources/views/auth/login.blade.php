@@ -1,4 +1,5 @@
-<x-guest-layout>
+@extends('layouts.master')
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +45,35 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+@section('content')
+    <div class="container mb-5">
+        <h1 class="text-center">Connexion</h1>
+        <form role="form" method="POST" action="{{ route('login') }}" class="d-flex flex-column align-items-center">
+            @csrf
+            {{-- <div class="mb-3">
+                <label for="name" class="form-label">Nom : </label>
+                <input type="name" class="form-control" id="name" name="name">
+            </div> --}}
+            <div class="mb-3 col-12 col-md-8 col-lg-5">
+                <label for="email" class="form-label">Adresse e-mail : </label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3 col-12 col-md-8 col-lg-5">
+                <label for="password" class="form-label">Mot de passe : </label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="mb-3 form-check col-12 col-md-8 col-lg-5">
+                <input type="checkbox" class="form-check-input" id="remember_me" name="remember">
+                <label class="form-check-label" for="remember_me">Se souvenir de moi</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+        <div class="text-center py-3">
+            <p><a href="" class="mb-3">Je n'ai pas encore de compte</a></p>
+            <p><a href="" class="mb-3">Mot de passe oublié</a></p>
+        </div>
+       
+    </div>
+@endsection
