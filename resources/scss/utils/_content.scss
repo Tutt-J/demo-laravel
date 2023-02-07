@@ -1,0 +1,17 @@
+@mixin section-title {
+    color: $blueGrey;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+@mixin section-icon-and-text-item {
+    text-align: center;
+    padding: 10px;
+}
+
+@mixin icon {
+    width: 35px;
+    height: 35px;
+    font-size: 35px;
+    margin-bottom: 20px;
+}

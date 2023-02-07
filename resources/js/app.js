@@ -5,18 +5,6 @@ import jQuery from "jquery";
 window.$ = jQuery;
 
 jQuery(function () {
-    // function setHeight(){
-    //     const height = $('.header').outerHeight();
-    //     $('.hero__datas').css('paddingTop', height);
-    // }
-
-    // setHeight();
-
-
-    // $( window ).resize(function() {
-    //     setHeight();
-    // });
-
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {;
             $("header").removeClass("header--transparent");
