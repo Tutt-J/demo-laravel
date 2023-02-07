@@ -73,7 +73,7 @@
                 <input type="checkbox" class="form-check-input" id="remember_me" name="remember">
                 <label class="form-check-label" for="remember_me">Se souvenir de moi</label>
             </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <x-primary-button>Se connecter</x-primary-button>
         </form>
         <div class="text-center py-3">
             <p><a href="{{ route('register') }}" class="mb-3">Je n'ai pas encore de compte</a></p>

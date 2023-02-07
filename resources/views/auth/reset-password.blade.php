@@ -49,21 +49,22 @@
             @csrf
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="email" class="form-label">Adresse e-mail : </label>
-                <input type="email" class="form-control" id="email" name="email"
-                    value="{{ old('email', $request->email) }}" autofocus required>
-                {{-- <p>{{ $errors->get('email') }}</p> --}}
+                <x-input-label for="email" :text="__('Adresse e-mail : ')" />
+                <x-text-input id="email" type="email" name="email" value="{{ old('email', $request->email) }}" required />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="password" class="form-label">Mot de passe : </label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <x-input-label for="password" :text="__('Mot de passe :')" />
+                <x-text-input id="password" type="password" name="password" required autocomplete="current-password" />
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="password_confirmation" class="form-label">Répéter le mot de passe : </label>
-                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
-                    required>
+                <x-input-label for="password_confirmation" :text="__('Répéter le mot de passe :')" />
+                <x-text-input id="password_confirmation" type="password" name="password_confirmation" required
+                    autocomplete="current-password" />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
-            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+            <x-primary-button>Mettre à jour</x-primary-button>
         </form>
     </div>
 @endsection

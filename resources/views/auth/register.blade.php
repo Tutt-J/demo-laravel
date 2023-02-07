@@ -28,7 +28,7 @@
                     autocomplete="current-password" />
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
+            <x-primary-button>S'inscrire</x-primary-button>
         </form>
         <div class="text-center py-3">
             <p><a href="{{ route('login') }}" class="mb-3">J'ai déjà un compte</a></p>

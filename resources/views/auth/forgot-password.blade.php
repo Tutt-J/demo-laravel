@@ -36,12 +36,11 @@
             class="d-flex flex-column align-items-center">
             @csrf
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="email" class="form-label">Adresse e-mail : </label>
-                <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"
-                    autofocus required>
-                {{-- <p>{{ $errors->get('email') }}</p> --}}
+                <x-input-label for="email" :text="__('Adresse e-mail : ')" />
+                <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
-            <button type="submit" class="btn btn-primary">Envoyer le lien</button>
+            <x-primary-button>Envoyer le lien</x-primary-button>
         </form>
     </div>
 @endsection
