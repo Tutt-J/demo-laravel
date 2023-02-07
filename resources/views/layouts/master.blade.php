@@ -9,7 +9,7 @@
 </head>
 <body>
     @include('layouts.header')
-    <main>
+    <main id="public">
         @yield('content')
     </main>
     @include('layouts.footer')
