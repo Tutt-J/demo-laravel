@@ -11,7 +11,7 @@ jQuery(function () {
         $("header").removeClass("header--transparent");
         $(".header__logo--transparent").addClass("d-none");
         $(".header__logo--visible").removeClass("d-none");
-        $('main#public').addClass('padding-top');
+        $("main#public").addClass("padding-top");
     } else {
         $(window).scroll(function () {
             if ($(this).scrollTop() > 50) {

@@ -1,33 +1,32 @@
-.footer{
-    &__column{
-        flex-basis:40%;
+.footer {
+    &__column {
+        flex-basis: 40%;
     }
-    &__title{
-        color:$orange;
-        font-size:0.8rem;
+    &__title {
+        color: $orange;
+        font-size: 0.8rem;
         text-transform: uppercase;
-        font-weight:bold;
+        font-weight: bold;
         letter-spacing: 0.2rem;
-        margin-bottom:5px;
+        margin-bottom: 5px;
     }
-    &__list{
-        padding-left:0;
+    &__list {
+        padding-left: 0;
     }
-    &__item{
+    &__item {
         list-style-type: none;
-        font-size:0.9rem;
-        margin-top:10px;
+        font-size: 0.9rem;
+        margin-top: 10px;
     }
-    &__link{
-        color:$blueGrey;
-        text-decoration:none;
-        &:hover{
-            color:$orange;
+    &__link {
+        color: $blueGrey;
+        text-decoration: none;
+        &:hover {
+            color: $orange;
         }
     }
-    &__copyright{
-        color:$blueGrey;
-        font-size:1rem;
+    &__copyright {
+        color: $blueGrey;
+        font-size: 1rem;
     }
 }
-
