@@ -8,28 +8,32 @@
         <form role="form" method="POST" action="{{ route('register') }}" class="d-flex flex-column align-items-center">
             @csrf
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="name" class="form-label">Nom : </label>
-                <input type="name" class="form-control" id="name" name="name" value="{{old('name')}}" required autofocus >
-                {{-- <p>{{$errors->get('name')}}</p> --}}
+                <x-input-label for="email" :text="__('Nom :')" />
+                <x-text-input id="name" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="email" class="form-label">Adresse e-mail : </label>
-                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" required>
+                <x-input-label for="email" :text="__('Adresse e-mail : ')" />
+                <x-text-input id="email" type="email" name="email" :value="old('email')" required />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="password" class="form-label">Mot de passe : </label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <x-input-label for="password" :text="__('Mot de passe :')" />
+                <x-text-input id="password" type="password" name="password" required autocomplete="current-password" />
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
             <div class="mb-3 col-12 col-md-8 col-lg-5">
-                <label for="password_confirmation" class="form-label">Mot de passe : </label>
-                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+                <x-input-label for="password_confirmation" :text="__('Répéter le mot de passe :')" />
+                <x-text-input id="password_confirmation" type="password" name="password_confirmation" required
+                    autocomplete="current-password" />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
             <button type="submit" class="btn btn-primary">S'inscrire</button>
         </form>
         <div class="text-center py-3">
             <p><a href="{{ route('login') }}" class="mb-3">J'ai déjà un compte</a></p>
         </div>
-       
+
     </div>
 @endsection
 {{-- 
