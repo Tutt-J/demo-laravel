@@ -1,0 +1,67 @@
+.hero {
+    min-height: 100vh;
+    background-image: url("/public/storage/img/universe.jpg");
+
+    &__datas {
+        padding-top: 170px;
+        padding-bottom: 50px;
+        color: white;
+    }
+    &__title {
+        font-size: 1.7rem;
+        font-weight: 600;
+        @include media-xs {
+            font-size: 2.5rem;
+        }
+        @include media-sm {
+            font-size: 3rem;
+        }
+        @include media-md {
+            font-size: 3.5rem;
+        }
+        @include media-lg {
+            font-size: 4rem;
+        }
+    }
+    &__text {
+        @include media-xs {
+            font-size: 1.2rem;
+        }
+    }
+    &__actions {
+        gap: 20px;
+    }
+}
+
+.domains {
+    row-gap: 20px;
+    &__title {
+        @include section-title;
+    }
+    &__item {
+        @include section-icon-and-text-item;
+    }
+    &__icon {
+        @include icon;
+        color: $yellow;
+    }
+    &__description {
+        color: $blueGrey;
+    }
+}
+
+.services {
+    &__title {
+        @include section-title;
+    }
+    &__item {
+        @include section-icon-and-text-item;
+    }
+    &__icon {
+        @include icon;
+        color: $orange;
+    }
+    &__description {
+        color: $blueGrey;
+    }
+}
