@@ -1,4 +1,9 @@
-<x-guest-layout>
+@extends('layouts.master')
+
+@section('title', 'Mot de passe oublié')
+
+@section('content')
+    {{-- <x-guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -36,4 +41,29 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+    <div class="container pb-5">
+        <h1 class="text-center">Réinitialisation du mot de passe</h1>
+        <form role="form" method="POST" action="{{ route('password.store') }}"
+            class="d-flex flex-column align-items-center">
+            @csrf
+            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+            <div class="mb-3 col-12 col-md-8 col-lg-5">
+                <label for="email" class="form-label">Adresse e-mail : </label>
+                <input type="email" class="form-control" id="email" name="email"
+                    value="{{ old('email', $request->email) }}" autofocus required>
+                {{-- <p>{{ $errors->get('email') }}</p> --}}
+            </div>
+            <div class="mb-3 col-12 col-md-8 col-lg-5">
+                <label for="password" class="form-label">Mot de passe : </label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3 col-12 col-md-8 col-lg-5">
+                <label for="password_confirmation" class="form-label">Répéter le mot de passe : </label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        </form>
+    </div>
+@endsection
