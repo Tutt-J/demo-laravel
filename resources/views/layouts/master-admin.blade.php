@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Digistos</title>
-    @vite(['resources/scss/app.scss',  'resources/js/app.js'])
+    @vite(['resources/scss/admin.scss',  'resources/js/app.js'])
 </head>
 <body>
-    @include('layouts.header')
-    <main id="public">
+    <main>
+        @include('layouts.sidebar')
         @yield('content')
     </main>
-    @include('layouts.footer')
 </body>
 </html>
