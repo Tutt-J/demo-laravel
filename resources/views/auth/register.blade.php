@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Inscription')
+
 @section('content')
     <div class="container mb-5">
         <h1 class="text-center">Inscription</h1>
