@@ -8,21 +8,27 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="{{route('admin.dashboard')}}"
+                class="nav-link text-white 
+            @if (Route::current()->getName() == 'admin.dashboard') active @endif"
+                >
                 Tableau de bord
             </a>
         </li>
-        <li>
-            <a href="{{ route('domains.list') }}" class="nav-link text-white">
+        <li class="nav-item">
+            <a href="{{ route('domains.list') }}" class="nav-link text-white
+            @if (Route::current()->getName() == 'domains.list') active @endif"
+            ">
                 Domaines d'expertise
             </a>
         </li>
-        <li>
-            <a href="{{ route('services.list') }}" class="nav-link text-white">
+        <li class="nav-item">
+            <a href="{{ route('services.list') }}" class="nav-link text-white
+            @if (Route::current()->getName() == 'services.list') active @endif"">
                 Services
             </a>
         </li>
-        <li>
+        <li class="nav-item">
             <a href="#" class="nav-link text-white">
                 Portfolio
             </a>
