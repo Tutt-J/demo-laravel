@@ -24,22 +24,20 @@
                             <td>{{ $domain->title }}</td>
                             <td>
                                 <a class="text-info me-3" title="Editer" href="{{ route('domains.update.edit', ['id' => $domain->id]) }}"><i class="fa-solid fa-pen"></i></a>
-                                <a href="#" title="Supprimer"
-                                    onclick="event.preventDefault(); document.getElementById('{{ "destroy-form_{$domain->id}" }}').submit();">
-                                    <i class="fa-solid fa-trash"></i>
-                                </a>
-                                <form id="{{ 'destroy-form_' . $domain->id }}"
-                                    action="{{ route('domains.destroy', ['id' => $domain->id]) }}" method="POST"
-                                    class="d-none">
-                                    @method('delete')
-                                    @csrf
-                                </form>
+                                <a data-id={{$domain->id}} data-name={{$domain->title}} href="#" data-bs-toggle="modal" data-bs-target="#modal"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+        
+        <x-modal 
+            :title="__('Voulez vous vraiment supprimer le domaine d\'expertise ?')"
+            :method="__('delete')"
+            :buttonName="__('Supprimer')"
+            :actionPath="__('domains.destroy')"
+        />
     </div>
 
 @endsection
