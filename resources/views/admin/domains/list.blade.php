@@ -23,21 +23,20 @@
                             <td><i class="{{ $domain->icon }}"></i></td>
                             <td>{{ $domain->title }}</td>
                             <td>
-                                <a class="text-info me-3" title="Editer" href="{{ route('domains.update.edit', ['id' => $domain->id]) }}"><i class="fa-solid fa-pen"></i></a>
-                                <a data-id={{$domain->id}} data-name={{$domain->title}} href="#" data-bs-toggle="modal" data-bs-target="#modal"><i class="far fa-trash-alt"></i></a>
+                                <a class="text-info me-3" title="Editer"
+                                    href="{{ route('domains.update.edit', ['id' => $domain->id]) }}"><i
+                                        class="fa-solid fa-pen"></i></a>
+                                <a data-id="{{ $domain->id }}"
+                                    data-name="Nom du domaine à supprimer : {{ $domain->title }}" href="#"
+                                    data-bs-toggle="modal" data-bs-target="#modal"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        
-        <x-modal 
-            :title="__('Voulez vous vraiment supprimer le domaine d\'expertise ?')"
-            :method="__('delete')"
-            :buttonName="__('Supprimer')"
-            :actionPath="__('domains.destroy')"
-        />
+
+        <x-modal :title="__('Voulez vous vraiment supprimer le domaine d\'expertise ?')" :method="__('delete')" :buttonName="__('Supprimer')" :actionPath="__('domains.destroy')" />
     </div>
 
 @endsection
