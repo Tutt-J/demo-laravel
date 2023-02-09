@@ -26,4 +26,12 @@ jQuery(function () {
             }
         });
     }
+
+    $('a[data-bs-target="#modal"]').click(function(event) {
+        event.stopPropagation();
+        var id = $(this).data('id');
+        var name = $(this).data('name');
+        $('.idValue').val(id);
+        $("#element-name").text(name);
+    });
 });

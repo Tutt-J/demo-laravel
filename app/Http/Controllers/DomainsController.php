@@ -86,12 +86,11 @@ class DomainsController extends Controller
     /**
      * Summary of destroy
      * @param Request $request
-     * @param mixed $id
      * @return RedirectResponse
      */
-    public function destroy(Request $request, $id): RedirectResponse
+    public function destroy(Request $request): RedirectResponse
     {
-        $domain = Domain::find($id);
+        $domain = Domain::find($request->id);
         $domain->delete();
 
         return redirect()->route('domains.list');

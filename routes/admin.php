@@ -27,7 +27,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/domains', [DomainsController::class, 'list'])->name('domains.list');
             Route::get('/domains/create', [DomainsController::class, 'create'])->name('domains.create');
             Route::post('/domains/store', [DomainsController::class, 'store'])->name('domains.store');
-            Route::delete('/domains/destroy/{id}', [DomainsController::class, 'destroy'])->name('domains.destroy');
+            Route::delete('/domains/destroy', [DomainsController::class, 'destroy'])->name('domains.destroy');
             Route::get('/domains/update/{id}', [DomainsController::class, 'edit'])->name('domains.update.edit');
             Route::patch('/domains/store-update/{id}', [DomainsController::class, 'update'])->name('domains.update.store');
         }
