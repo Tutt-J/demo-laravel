@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DomainsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::prefix('admin')->group(function () {
             return view('admin.dashboard');
         }
     )->middleware(['auth', 'verified'])->name('admin.dashboard');
+    
     Route::middleware('auth')->group(
         function () {
             Route::get('/domains', [DomainsController::class, 'list'])->name('domains.list');
@@ -30,6 +32,17 @@ Route::prefix('admin')->group(function () {
             Route::delete('/domains/destroy', [DomainsController::class, 'destroy'])->name('domains.destroy');
             Route::get('/domains/update/{id}', [DomainsController::class, 'edit'])->name('domains.update.edit');
             Route::patch('/domains/store-update/{id}', [DomainsController::class, 'update'])->name('domains.update.store');
+        }
+    );
+
+    Route::middleware('auth')->group(
+        function () {
+            Route::get('/services', [ServicesController::class, 'list'])->name('services.list');
+            Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
+            Route::post('/services/store', [ServicesController::class, 'store'])->name('services.store');
+            Route::delete('/services/destroy', [ServicesController::class, 'destroy'])->name('services.destroy');
+            Route::get('/services/update/{id}', [ServicesController::class, 'edit'])->name('services.update.edit');
+            Route::patch('/services/store-update/{id}', [ServicesController::class, 'update'])->name('services.update.store');
         }
     );
 
