@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Domain;
+use App\Models\Service;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
-class DomainsController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Summary of list
@@ -15,9 +15,9 @@ class DomainsController extends Controller
      */
     public function list(): View
     {
-        $domains = Domain::all();
-        return view('admin.domains.list', [
-            'domains' => $domains,
+        $services = Service::all();
+        return view('admin.services.list', [
+            'services' => $services,
         ]);
     }
 
@@ -27,7 +27,7 @@ class DomainsController extends Controller
      */
     public function create(): View
     {
-        return view('admin.domains.create');
+        return view('admin.services.create');
     }
 
     /**
@@ -46,11 +46,11 @@ class DomainsController extends Controller
             ],
         ]);
 
-        $domain = Domain::create([
+        $service = Service::create([
             'title' => $request->title,
             'icon' => $request->icon,
         ]);
-        return redirect()->route('domains.list');
+        return redirect()->route('services.list');
     }
 
     /**
@@ -60,9 +60,9 @@ class DomainsController extends Controller
      */
     public function edit($id): View
     {
-        $domain = Domain::find($id);
+        $service = Service::find($id);
 
-        return view('admin.domains.edit', ['domain' => $domain]);
+        return view('admin.services.edit', ['service' => $service]);
     }
 
     /**
@@ -73,14 +73,14 @@ class DomainsController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        $domain = Domain::find($id);
+        $service = Service::find($id);
 
-        $domain->title = $request->title;
-        $domain->icon = $request->icon;
+        $service->title = $request->title;
+        $service->icon = $request->icon;
 
-        $domain->save();
+        $service->save();
 
-        return redirect()->route('domains.list');
+        return redirect()->route('services.list');
     }
 
     /**
@@ -90,9 +90,9 @@ class DomainsController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $domain = Domain::find($request->id);
-        $domain->delete();
+        $service = Service::find($request->id);
+        $service->delete();
 
-        return redirect()->route('domains.list');
+        return redirect()->route('services.list');
     }
 }

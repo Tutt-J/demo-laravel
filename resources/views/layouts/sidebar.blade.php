@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="{{ route('services.list') }}" class="nav-link text-white">
                 Services
             </a>
         </li>
